@@ -1,0 +1,14 @@
+package com.example.demo.pojo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class communityCards { //获取的牌变成list
+	private List<Card> community;
+	public List<Card> getcommunity() {
+		return community;
+	}
+	public    void setcommunity(List<Card> community){
+		this.community = community;
+	}
+}

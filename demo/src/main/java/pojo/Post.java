@@ -1,0 +1,53 @@
+package pojo;
+
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+/*
+ * 这是bolg 的实体类有 标题 文章和时间
+ * */
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity //实体类
+/* 博客的 对象*/
+@Table(name="posts") // 数据库的表名
+public class Post {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) //自动生成唯一id
+	private Long  id; //主键
+	
+	private String title ; //标题
+	
+	@Column(columnDefinition = "TEXT") //大文本用 text
+	private String content; //文章
+	
+	private String publishTime ; //时间
+
+	public Post() {} //空参构造器
+	public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+    public String getpublishTime() {
+    	return publishTime ;
+    }
+    public void setpublishTime(String publishTime) {
+    	this.publishTime = publishTime;
+    }
+}

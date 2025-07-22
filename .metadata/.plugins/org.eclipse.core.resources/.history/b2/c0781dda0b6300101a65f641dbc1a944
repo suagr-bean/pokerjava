@@ -1,0 +1,23 @@
+package pojo;
+
+import java.awt.Color;
+
+public class fixedCards {
+ private String Color [];
+ private  String Number [];
+ 
+ public String [] getColor() {
+	 return Color;
+ }
+ public void setColor(String [] Color) {
+	 this.Color =Color;
+ }
+ 
+ public String []  getNumber() {
+	 return Number;
+ }
+ public void setNumber(String [] Number) {
+	 this.Number =Number;
+ }
+
+ }

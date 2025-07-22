@@ -1,0 +1,29 @@
+package com.example.demo.pojo;
+
+import java.awt.Color;
+
+import org.aspectj.weaver.patterns.ThisOrTargetAnnotationPointcut;
+
+public class Card {
+ private String color;
+ private  String number;
+
+ public String getcolor() {
+	 return color;
+ }
+ public void setcolor(String color) {
+	 this.color =color;
+ }
+ 
+ public String getnumber() {
+	 return number;
+ }
+ public void setnumber(String number){
+	 this.number=number;
+ }
+ 
+ public Card(String color,String number) {
+	 this.color=color;
+	 this.number=number;
+ }
+}

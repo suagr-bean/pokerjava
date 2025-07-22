@@ -1,0 +1,14 @@
+package service;
+
+import java.util.List;
+
+public class receiveCards {
+
+
+public void reveive(List<String> cards) {
+	List<String> dealList =cards;
+	if (cards.get(4) == "") {
+		
+	} 
+ }
+}

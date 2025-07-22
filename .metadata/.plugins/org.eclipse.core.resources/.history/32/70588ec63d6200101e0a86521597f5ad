@@ -1,0 +1,36 @@
+package com.example.demo;
+
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.dao.jpaRepository;
+import com.example.demo.pojo.Post;
+
+//接收发送博客的数据
+@CrossOrigin(origins = "http://localhost:3030") 
+@RestController
+@RequestMapping("/api")
+public class PostController {
+	@Autowired
+	private  jpaRepository daoBlog; // 增删改查接口
+	  @PostMapping("/posts")
+	    public ResponseEntity<String> createPost(@RequestBody Post post) {
+	        // 保存至数据库
+		   daoBlog.save(post);
+	        return ResponseEntity.ok("保存数据库");  
+	     
+	  }
+	  @GetMapping("/posts")  // 要跟前端对应 get 就是get 
+	  public List<Post> getall() {
+		  return daoBlog.findAll(); //查询数据
+	  }
+}

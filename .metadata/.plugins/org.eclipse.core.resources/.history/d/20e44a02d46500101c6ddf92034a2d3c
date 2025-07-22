@@ -1,0 +1,12 @@
+package service;
+
+import java.security.PrivateKey;
+import java.util.ArrayList;
+import java.util.List;
+
+public class fraction {
+	public void myhand(List<String> deList) {
+		List<String> handlist ;
+		handlist = new ArrayList<String>(deList);
+	}
+}

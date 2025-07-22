@@ -1,0 +1,17 @@
+package pojo;
+
+import java.awt.Color;
+import java.util.List;
+
+import org.aspectj.weaver.patterns.ThisOrTargetAnnotationPointcut;
+
+public class Card {
+ private List<String> cards ;
+  
+ public List<String> getcards(){
+	 return cards ;
+ }
+  public void setcards(List<String>cards){
+	  this.cards=cards;
+  }
+}

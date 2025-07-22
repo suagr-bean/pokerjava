@@ -1,0 +1,22 @@
+package service;
+
+
+
+
+
+
+import org.junit.jupiter.api.Test;
+
+import pojo.fixedCards;
+
+public class allcards {
+	@Test
+	public  void setcard() {
+		 String [] setupcolors = {"S","H","D","C"};
+		 String [] setupnumber = {"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
+		fixedCards fixed =new fixedCards();
+		fixed.setColor(setupcolors);
+		fixed.setNumber(setupnumber);
+		System.out.println(fixed.getColor().toString());
+	}
+	}

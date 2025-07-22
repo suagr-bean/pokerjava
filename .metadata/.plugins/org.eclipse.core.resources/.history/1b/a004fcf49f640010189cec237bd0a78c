@@ -1,0 +1,42 @@
+package service;
+
+
+
+
+
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+
+import pojo.fixedCards;
+
+public class allcards { //固定死所有的卡牌
+	@Test
+	public  void setcard() {
+		 String [] setupcolors = {"S","H","D","C"};
+		 String [] setupnumber = {"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
+		fixedCards fixed =new fixedCards();
+		fixed.setColor(setupcolors);
+		fixed.setNumber(setupnumber);
+	
+		System.out.println(Arrays.toString(fixed.getColor()));
+		fixed.allCombination(); //直接把封装在fixedcards方法里面  
+		System.out.print(Arrays.toString(fixed.getCombination()));
+		 List <String> allList  =new ArrayList<String>(Arrays.asList(fixed.getCombination()));
+		 duplicate dup = new duplicate();
+		 dup.deal(allList);
+		}
+	@Test
+	public void test() {
+		 List <String> allList  =new ArrayList<String>(Arrays.asList(fixed.getCombination()));
+		 duplicate dup = new duplicate();
+		 dup.deal(allList);
+	}
+	
+	}
+	

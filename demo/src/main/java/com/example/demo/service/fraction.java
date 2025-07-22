@@ -1,0 +1,25 @@
+package com.example.demo.service;
+
+import java.security.PrivateKey;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+@Service
+public class fraction {
+	List<String> handlist ;  //自己的7 张牌
+	List<String> opponentList; //对手的 7 张牌
+	public void myhand(List<String> list,int i ) {
+	
+		if( i == 1) {
+			handlist = new ArrayList<String>(list);
+		}
+		if(i ==2) {
+			opponentList = new ArrayList<String>(list);
+		}
+	}
+	public void text () {
+		System.out.println( "自己的牌组为"+handlist);
+		System.out.println("对手的牌组"+opponentList);
+	}
+}

@@ -1,0 +1,52 @@
+package service;
+
+import java.security.Identity;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+
+import org.hibernate.sql.model.jdbc.DeleteOrUpsertOperation;
+import org.junit.jupiter.api.Test;
+
+public class duplicate {
+	public List<String> deList;
+	public List<String> copy;
+	
+	public void delete(List<String> cards) {
+		deList = new ArrayList(cards); // 拿到公牌 +手牌
+		System.out.println(deList);
+	}
+	public   void copydeal(List<String> allList) {
+		copy =  new ArrayList (allList); //拿到副本 要用Arraylist  arrayslist 是不可以修改的
+		copy.removeAll(deList);  //删除掉7张牌
+		}
+	public void  complete() {//这里开始
+		Random random = new Random();
+		if(deList.get(3) == null) {
+			int num3 = random.nextInt(copy.size());
+			deList.set(3,copy.get(num3));
+		}
+		if(deList.get(4).isEmpty()) {
+			int num4 = random.nextInt(copy.size());
+			deList.set(4, copy.get(num4));		
+		}
+		
+	System.out.println(deList);	
+	}
+	
+	
+	@Test  //测试类
+ public void testDuplicate() {
+		duplicate dup =new duplicate();
+		   List<String>  cards = Arrays.asList("SA","A9","A3",null,"");
+		   List <String> allList = Arrays.asList("S2","S3","S4","S5","S6","S7","S8","S9","S10","SJ","SQ","SK","SA",
+				   "H2","H3","H4","H5","H6","H7","H8","H9","H10","HJ","HQ","HK","HA",
+				   "D2","D3","D4","D5","D6","D7","D8","D9","D10","DJ","DQ","DK","DA",
+				   "C2","C3","C4","C5","C6","C7","C8","C9","C10","CJ","CQ","CK","CA");
+		   dup.delete(cards);
+		   dup.copydeal(allList);
+		   dup.complete();
+	}
+  
+}

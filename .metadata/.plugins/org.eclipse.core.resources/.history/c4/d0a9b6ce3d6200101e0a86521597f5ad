@@ -1,0 +1,29 @@
+package controller;
+
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.pojo.Card;
+
+//接收来自前端用户提交的卡牌
+
+@CrossOrigin(origins = "http://localhost:3030")  
+@RequestMapping("/api")
+@RestController
+public class cardController {
+ 
+	@PostMapping("/cards")
+	public ResponseEntity<String> receiveCards(@RequestBody List<String> cards){
+	
+		System.out.println(cards);
+		 return ResponseEntity.ok("成功");
+	}
+}
