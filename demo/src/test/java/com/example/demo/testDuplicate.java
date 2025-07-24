@@ -17,7 +17,7 @@ public class testDuplicate {
  public void test() {
 		
 		
-		   List<String>  cards = Arrays.asList("SA","S9","S3","","","H3","H5");
+		   List<String>  cards = Arrays.asList("SA","SA","S4","S6","","S6","HA");
 		   List <String> allList = Arrays.asList("S2","S3","S4","S5","S6","S7","S8","S9","S10","SJ","SQ","SK","SA",
 				   "H2","H3","H4","H5","H6","H7","H8","H9","H10","HJ","HQ","HK","HA",
 				   "D2","D3","D4","D5","D6","D7","D8","D9","D10","DJ","DQ","DK","DA",

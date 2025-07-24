@@ -15,10 +15,10 @@ import org.springframework.stereotype.Service;
 public class duplicate {  // 把接收到的牌list 处理  如果有空的补齐 
 	//把所有牌的list 复制样本 并删掉所有已经知道的牌
 	
-	public List<String> deList;
-	public List<String> copy;
-	public List<String> oppList;
-	public List<String> oppCopy;
+	public List<String> deList;  //自己的牌组
+	public List<String> copy;  //之前的副本 不太重要
+	public List<String> oppList;  //对手的牌组
+	public List<String> oppCopy;  //牌组剩余的牌
 	@Autowired public  fraction frac ;
 	Random random = new Random();
 	public void delete(List<String> cards) {
@@ -40,7 +40,7 @@ public class duplicate {  // 把接收到的牌list 处理  如果有空的补�
 			deList.set(4, copy.get(num4));
 		  copy.remove(num4);
 		}
-		System.out.print(copy);
+
 		frac.myhand(deList,1); //把牌传过去 排序打分
 	}
 	
@@ -53,10 +53,9 @@ public class duplicate {  // 把接收到的牌list 处理  如果有空的补�
 		int card2 =random.nextInt(oppCopy.size());
 		oppList.set(6, oppCopy.get(card2)); //替换手牌2
 		oppCopy.remove(card2);
-		System.out.println(oppList);
 		frac.myhand(oppList, 2); //对手的牌组
 	}
 	public void Sys() {
-		frac.text();
+		frac.text();//打印牌组
 	}
 }
